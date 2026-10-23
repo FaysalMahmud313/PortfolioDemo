@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22" />
+      <stop offset="50%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="emeraldGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#aiBg)" />
+
+  <!-- Neural Mesh Grid -->
+  <g stroke="#059669" stroke-width="1" opacity="0.3">
+    <circle cx="400" cy="240" r="180" fill="none" stroke-dasharray="8 6"/>
+    <circle cx="400" cy="240" r="120" fill="none" stroke-dasharray="4 4"/>
+    <circle cx="400" cy="240" r="60" fill="none"/>
+  </g>
+
+  <!-- Neural Nodes and Interconnections -->
+  <g stroke="#34d399" stroke-width="2" opacity="0.7">
+    <line x1="260" y1="180" x2="350" y2="150" />
+    <line x1="260" y1="180" x2="330" y2="250" />
+    <line x1="260" y1="280" x2="330" y2="250" />
+    <line x1="260" y1="280" x2="360" y2="330" />
+    
+    <line x1="350" y1="150" x2="450" y2="170" />
+    <line x1="330" y1="250" x2="470" y2="240" />
+    <line x1="360" y1="330" x2="460" y2="310" />
+
+    <line x1="450" y1="170" x2="550" y2="200" />
+    <line x1="470" y1="240" x2="550" y2="200" />
+    <line x1="470" y1="240" x2="550" y2="280" />
+    <line x1="460" y1="310" x2="550" y2="280" />
+  </g>
+
+  <!-- Layer 1 Nodes -->
+  <circle cx="260" cy="180" r="12" fill="#10b981" filter="url(#emeraldGlow)" />
+  <circle cx="260" cy="280" r="12" fill="#10b981" filter="url(#emeraldGlow)" />
+
+  <!-- Hidden Layer 1 Nodes -->
+  <circle cx="350" cy="150" r="14" fill="#059669" filter="url(#emeraldGlow)" />
+  <circle cx="330" cy="250" r="14" fill="#059669" filter="url(#emeraldGlow)" />
+  <circle cx="360" cy="330" r="14" fill="#059669" filter="url(#emeraldGlow)" />
+
+  <!-- Hidden Layer 2 Nodes -->
+  <circle cx="450" cy="170" r="14" fill="#14b8a6" filter="url(#emeraldGlow)" />
+  <circle cx="470" cy="240" r="14" fill="#14b8a6" filter="url(#emeraldGlow)" />
+  <circle cx="460" cy="310" r="14" fill="#14b8a6" filter="url(#emeraldGlow)" />
+
+  <!-- Output Nodes -->
+  <circle cx="550" cy="200" r="16" fill="#38bdf8" filter="url(#emeraldGlow)" />
+  <circle cx="550" cy="280" r="16" fill="#38bdf8" filter="url(#emeraldGlow)" />
+
+  <!-- Bounding Box / Scan Detection HUD -->
+  <rect x="580" y="80" width="180" height="90" rx="8" fill="#064e3b" stroke="#34d399" stroke-width="1.5" opacity="0.9" />
+  <text x="600" y="110" fill="#a7f3d0" font-family="monospace" font-size="12" font-weight="bold">TARGET DETECTED</text>
+  <text x="600" y="130" fill="#ffffff" font-family="monospace" font-size="14">IoU: 0.942</text>
+  <text x="600" y="152" fill="#6ee7b7" font-family="monospace" font-size="11">Confidence: 99.4%</text>
+
+  <!-- Metrics Bar -->
+  <rect x="80" y="410" width="640" height="50" rx="10" fill="#022c22" stroke="#059669" />
+  <text x="120" y="440" fill="#6ee7b7" font-family="monospace" font-size="13">Model: Modified U-Net + Attention</text>
+  <text x="440" y="440" fill="#38bdf8" font-family="monospace" font-size="13">Inference: 14.8ms (TensorRT)</text>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tuiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0c" />
+      <stop offset="100%" stop-color="#12131a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#tuiBg)" />
+
+  <!-- Terminal Window Frame -->
+  <rect x="40" y="30" width="720" height="440" rx="8" fill="#000000" stroke="#22c55e" stroke-width="1.5" />
+  
+  <!-- Terminal Title Bar -->
+  <rect x="40" y="30" width="720" height="35" fill="#14532d" />
+  <text x="60" y="53" fill="#86efac" font-family="monospace" font-size="12" font-weight="bold">KubeWatch v1.4.0 — Cluster: prod-us-east-1 [Context: k8s-admin]</text>
+
+  <!-- Metric Gauges -->
+  <g font-family="monospace" font-size="12">
+    <!-- CPU Gauge -->
+    <text x="60" y="95" fill="#86efac">CPU Utilization [24 Cores]:</text>
+    <text x="60" y="115" fill="#22c55e">[||||||||||||||||||||||||||....................] 58.2%</text>
+
+    <!-- RAM Gauge -->
+    <text x="440" y="95" fill="#86efac">Memory Utilization [64 GB]:</text>
+    <text x="440" y="115" fill="#38bdf8">[||||||||||||||||||||||||||||||||..............] 68.4%</text>
+  </g>
+
+  <!-- Pod Table Header -->
+  <rect x="55" y="145" width="690" height="28" fill="#1e293b" />
+  <g font-family="monospace" font-size="11" font-weight="bold" fill="#94a3b8">
+    <text x="70" y="164">NAMESPACE</text>
+    <text x="200" y="164">POD NAME</text>
+    <text x="430" y="164">STATUS</text>
+    <text x="540" y="164">RESTARTS</text>
+    <text x="640" y="164">AGE</text>
+  </g>
+
+  <!-- Pod Rows -->
+  <g font-family="monospace" font-size="12">
+    <text x="70" y="200" fill="#cbd5e1">production</text>
+    <text x="200" y="200" fill="#38bdf8">auth-service-7f998-bx91</text>
+    <text x="430" y="200" fill="#22c55e">● Running</text>
+    <text x="560" y="200" fill="#94a3b8">0</text>
+    <text x="640" y="200" fill="#94a3b8">14d</text>
+
+    <text x="70" y="235" fill="#cbd5e1">production</text>
+    <text x="200" y="235" fill="#38bdf8">payment-gateway-6c4d-km21</text>
+    <text x="430" y="235" fill="#22c55e">● Running</text>
+    <text x="560" y="235" fill="#94a3b8">0</text>
+    <text x="640" y="235" fill="#94a3b8">14d</text>
+
+    <text x="70" y="270" fill="#cbd5e1">ingress</text>
+    <text x="200" y="270" fill="#38bdf8">traefik-proxy-9081a-zq71</text>
+    <text x="430" y="270" fill="#22c55e">● Running</text>
+    <text x="560" y="270" fill="#94a3b8">0</text>
+    <text x="640" y="270" fill="#94a3b8">42d</text>
+
+    <text x="70" y="305" fill="#cbd5e1">batch-jobs</text>
+    <text x="200" y="305" fill="#38bdf8">nightly-etl-cron-8711a</text>
+    <text x="430" y="305" fill="#eab308">● Succeeded</text>
+    <text x="560" y="305" fill="#94a3b8">0</text>
+    <text x="640" y="305" fill="#94a3b8">4h</text>
+  </g>
+
+  <!-- Bottom Log Streaming Preview -->
+  <line x1="55" y1="340" x2="745" y2="340" stroke="#334155" />
+  <g font-family="monospace" font-size="11">
+    <text x="65" y="365" fill="#64748b">[20:26:12.890] [auth-service] INFO: JWT verification latency: 0.8ms</text>
+    <text x="65" y="390" fill="#64748b">[20:26:13.104] [payment-gw]  INFO: Handled webhook event #94812 status=200</text>
+    <text x="65" y="415" fill="#22c55e">[20:26:14.002] [kubewatch]   INFO: Daemon memory: 12.4 MB RSS | Go Routines: 18</text>
+    <text x="65" y="445" fill="#86efac">&gt; Press 'q' to exit | 'l' logs | 'd' describe | 'r' restart | '/' search</text>
+  </g>
+</svg>

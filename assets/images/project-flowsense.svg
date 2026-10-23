@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b132b" />
+      <stop offset="60%" stop-color="#1c2541" />
+      <stop offset="100%" stop-color="#070d1d" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#fsBg)" />
+
+  <!-- Frame Header -->
+  <rect x="50" y="35" width="700" height="430" rx="14" fill="#0d1829" stroke="#3b82f6" stroke-width="1.5" />
+  <line x1="50" y1="88" x2="750" y2="88" stroke="#1e293b" />
+
+  <circle cx="82" cy="62" r="8" fill="#10b981" />
+  <text x="105" y="68" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">FlowSense — AI Cash-Flow Co-Pilot</text>
+  <rect x="560" y="50" width="165" height="26" rx="13" fill="#1e3a5f" />
+  <text x="642" y="67" fill="#60a5fa" font-family="monospace" font-size="11" text-anchor="middle">FinTechathon 2026 Team</text>
+
+  <!-- Left Card: AI Shortage & Rescue Plan -->
+  <rect x="80" y="110" width="280" height="150" rx="10" fill="#111c33" stroke="#2563eb" stroke-width="1" />
+  <text x="100" y="138" fill="#93c5fd" font-family="monospace" font-size="11" font-weight="bold">AI RESCUE PLAN CALCULATOR</text>
+  <text x="100" y="172" fill="#ef4444" font-family="system-ui, sans-serif" font-size="24" font-weight="bold">-USD 40,000</text>
+  <text x="100" y="196" fill="#fca5a5" font-family="monospace" font-size="11">Protected Cash Shortage Identified</text>
+  <line x1="100" y1="212" x2="340" y2="212" stroke="#1e293b" />
+  <text x="100" y="235" fill="#34d399" font-family="monospace" font-size="11">✓ Invoice #6014 Factoring Match</text>
+
+  <!-- Right Card: Multi-Tier Approval Guard -->
+  <rect x="380" y="110" width="340" height="150" rx="10" fill="#111c33" stroke="#10b981" stroke-width="1" />
+  <text x="405" y="138" fill="#a7f3d0" font-family="monospace" font-size="11" font-weight="bold">APPROVAL SAFETY CHECKS (SANDBOX)</text>
+  <rect x="405" y="155" width="290" height="32" rx="6" fill="#1e293b" />
+  <text x="420" y="176" fill="#e2e8f0" font-family="monospace" font-size="11">● Policy Guard: Borrowing cap &lt; 8%</text>
+
+  <rect x="405" y="195" width="290" height="32" rx="6" fill="#1e293b" />
+  <text x="420" y="216" fill="#38bdf8" font-family="monospace" font-size="11">● Preflight: Payroll reserve protected</text>
+
+  <!-- Cash Forecast Chart Simulation -->
+  <rect x="80" y="280" width="640" height="160" rx="10" fill="#090f1d" stroke="#1e293b" />
+  <text x="105" y="310" fill="#94a3b8" font-family="monospace" font-size="12" font-weight="bold">SIMULATED CASH FLOW RUNWAY (30-DAY WHAT-IF PROJECTION)</text>
+  
+  <polyline points="105,400 180,380 260,395 340,340 420,360 500,320 580,310 680,290" fill="none" stroke="#34d399" stroke-width="3" />
+  <line x1="105" y1="365" x2="680" y2="365" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 4" />
+  <text x="685" y="370" fill="#ef4444" font-family="monospace" font-size="10">Reserve Limit</text>
+  
+  <circle cx="500" cy="320" r="5" fill="#38bdf8" />
+  <circle cx="680" cy="290" r="5" fill="#34d399" />
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="faceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181829" />
+      <stop offset="60%" stop-color="#232338" />
+      <stop offset="100%" stop-color="#0f0f1c" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#faceBg)" />
+
+  <!-- Frame Header -->
+  <rect x="50" y="35" width="700" height="430" rx="12" fill="#131322" stroke="#6366f1" stroke-width="1.5" />
+  <line x1="50" y1="88" x2="750" y2="88" stroke="#2d2d47" />
+
+  <circle cx="82" cy="62" r="8" fill="#818cf8" />
+  <text x="105" y="67" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">AI-Generated Faces &amp; Human Rights Online</text>
+  <rect x="530" y="50" width="195" height="26" rx="13" fill="#2d2d55" />
+  <text x="627" y="67" fill="#c7d2fe" font-family="monospace" font-size="11" text-anchor="middle">Empirical Survey (N=120 BD)</text>
+
+  <!-- Left: Synthetic Face Vector Overlay -->
+  <g transform="translate(100, 130)">
+    <circle cx="100" cy="110" r="85" fill="#1e1e38" stroke="#818cf8" stroke-width="2" />
+    <!-- Facial mesh lines -->
+    <ellipse cx="100" cy="110" rx="55" ry="75" fill="none" stroke="#6366f1" stroke-dasharray="4 4" opacity="0.6" />
+    <circle cx="75" cy="95" r="8" fill="#38bdf8" />
+    <circle cx="125" cy="95" r="8" fill="#38bdf8" />
+    <path d="M85 145 Q100 160 115 145" fill="none" stroke="#f43f5e" stroke-width="3" stroke-linecap="round" />
+    <line x1="100" y1="95" x2="100" y2="125" stroke="#a5b4fc" stroke-width="2" />
+    
+    <!-- Deepfake / Detection Tag -->
+    <rect x="25" y="210" width="150" height="30" rx="6" fill="#312e81" />
+    <text x="100" y="230" fill="#e0e7ff" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">SYNTHETIC FACE ID</text>
+  </g>
+
+  <!-- Right: Survey Findings & Ethics Insights -->
+  <rect x="340" y="115" width="380" height="320" rx="10" fill="#1c1c30" stroke="#3730a3" />
+  <text x="365" y="145" fill="#a5b4fc" font-family="monospace" font-size="12" font-weight="bold">PUBLIC CONCERN &amp; HUMAN RIGHTS INSIGHTS</text>
+
+  <!-- Bar 1: Digital Identity Theft -->
+  <text x="365" y="180" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="12">Identity Theft &amp; Misinformation Risk</text>
+  <rect x="365" y="190" width="330" height="12" rx="6" fill="#2d2d4b" />
+  <rect x="365" y="190" width="290" height="12" rx="6" fill="#ef4444" />
+  <text x="660" y="180" fill="#fca5a5" font-family="monospace" font-size="11">88%</text>
+
+  <!-- Bar 2: Privacy Infringement -->
+  <text x="365" y="235" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="12">Online Privacy &amp; Consent Violations</text>
+  <rect x="365" y="245" width="330" height="12" rx="6" fill="#2d2d4b" />
+  <rect x="365" y="245" width="265" height="12" rx="6" fill="#f59e0b" />
+  <text x="660" y="235" fill="#fde68a" font-family="monospace" font-size="11">80%</text>
+
+  <!-- Bar 3: Awareness of Deepfake Detection -->
+  <text x="365" y="290" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="12">Public Need for Regulatory Frameworks</text>
+  <rect x="365" y="300" width="330" height="12" rx="6" fill="#2d2d4b" />
+  <rect x="365" y="300" width="305" height="12" rx="6" fill="#3b82f6" />
+  <text x="660" y="290" fill="#bfdbfe" font-family="monospace" font-size="11">92%</text>
+
+  <rect x="365" y="340" width="330" height="75" rx="8" fill="#131322" stroke="#2d2d47" />
+  <text x="380" y="365" fill="#818cf8" font-family="monospace" font-size="11">Methodology &amp; Demographics:</text>
+  <text x="380" y="390" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">120 Participants surveyed in Bangladesh, examining digital literacy and legal protection needs.</text>
+</svg>

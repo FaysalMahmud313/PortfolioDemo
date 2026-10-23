@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ntBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091b29" />
+      <stop offset="60%" stop-color="#0d2e47" />
+      <stop offset="100%" stop-color="#07131e" />
+    </linearGradient>
+    <linearGradient id="ntCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#ntBg)" />
+  
+  <!-- Map Grid Overlay -->
+  <g stroke="#164e63" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+  </g>
+
+  <!-- Flight / Travel Route Curve -->
+  <path d="M 120 340 Q 400 80 680 280" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="10 6" />
+
+  <!-- Destination Waypoint 1 -->
+  <circle cx="120" cy="340" r="14" fill="#0284c7" stroke="#38bdf8" stroke-width="3" />
+  <circle cx="120" cy="340" r="6" fill="#fff" />
+  <text x="120" y="375" fill="#e0f2fe" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Departure City</text>
+
+  <!-- Midpoint Hub -->
+  <circle cx="400" cy="190" r="18" fill="#0369a1" stroke="#38bdf8" stroke-width="3" />
+  <polygon points="400,178 410,200 390,200" fill="#38bdf8" />
+  <text x="400" y="230" fill="#bae6fd" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Transit Hub • NextTrip Router</text>
+
+  <!-- Destination Waypoint 2 -->
+  <circle cx="680" cy="280" r="14" fill="#10b981" stroke="#34d399" stroke-width="3" />
+  <circle cx="680" cy="280" r="6" fill="#fff" />
+  <text x="680" y="315" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Destination Resort</text>
+
+  <!-- Glass Card Dashboard Overlay -->
+  <rect x="70" y="45" width="660" height="85" rx="12" fill="#0b1726" stroke="#1e3a5f" stroke-width="1.5" opacity="0.95" />
+  <circle cx="105" cy="87" r="16" fill="#0284c7" />
+  <text x="105" y="93" fill="#fff" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">✈</text>
+  <text x="135" y="80" fill="#fff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">NextTrip — Travel Management System</text>
+  <text x="135" y="103" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Itinerary Planning • Booking Workflows • Travel Package Engine</text>
+
+  <rect x="580" y="68" width="125" height="36" rx="18" fill="#0f766e" />
+  <text x="642" y="91" fill="#ccfbf1" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">✓ Completed</text>
+
+  <!-- Bottom Metric Bar -->
+  <rect x="70" y="420" width="660" height="45" rx="8" fill="#0b1726" stroke="#1e293b" />
+  <text x="95" y="448" fill="#38bdf8" font-family="monospace" font-size="12">Stack: Web Application Architecture • Database Workflows • Package Management</text>
+</svg>

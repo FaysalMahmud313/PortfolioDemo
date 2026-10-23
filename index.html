@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faysal Mahmud | Aspiring Software Engineer, Web Developer &amp; AI/ML Researcher</title>
+  
+  <!-- SEO & Social OpenGraph Metadata -->
+  <meta name="description" content="Portfolio of Faysal Mahmud — Computer Science & Engineering student at American International University-Bangladesh (AIUB). Software engineering, web development, and explainable AI research.">
+  <meta name="keywords" content="Faysal Mahmud, AIUB CSE, Software Engineer, Web Developer, Machine Learning, Explainable AI, SHAP, C++, Java, C#, PHP, Embedded Systems, ESP32">
+  <meta name="author" content="Faysal Mahmud">
+  <meta property="og:title" content="Faysal Mahmud | Aspiring Software Engineer &amp; AI/ML Researcher">
+  <meta property="og:description" content="CSE Undergraduate at AIUB. Practical software projects in web engineering, systems, IoT, and healthcare/cybersecurity machine learning research.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Ambient Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Site Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrap">
+      <a href="#hero" class="brand-logo">
+        <span style="color:var(--accent-cyan)">&lt;</span>FM<span style="color:var(--accent-purple)">/&gt;</span>
+        <span class="brand-badge">AIUB CSE</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#experience" class="nav-link">Leadership &amp; Activities</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#resume-preview" class="nav-link" onclick="openResumeModal(); return false;">Resume</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Secret Admin Access Trigger (Discreet Lock Glyph) -->
+        <button class="btn-admin-secret" onclick="toggleAdminAccess()" title="Owner CMS Portal (Ctrl+Shift+A)">
+          <i data-lucide="lock" style="width:18px;height:18px"></i>
+        </button>
+
+        <a href="#contact" class="btn-primary" style="padding:0.5rem 1.1rem; font-size:0.85rem">
+          Let's Connect
+        </a>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section with 3D Canvas -->
+  <section class="hero-section" id="hero">
+    <!-- Three.js Interactive Canvas Container -->
+    <div id="webgl-hero-container"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="status-pill" id="hero-status-badge">
+          <span class="pulse-dot"></span>
+          <span>Open for Software Engineering Internships &amp; Research Collaborations</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="name-gradient" id="hero-name">Faysal Mahmud</span>
+        </h1>
+
+        <div class="hero-subtitle" id="hero-role">
+          Aspiring Software Engineer | Web Developer | AI/ML Research Enthusiast
+        </div>
+
+        <p class="hero-tagline" id="hero-tagline">
+          Computer Science and Engineering student at American International University-Bangladesh (AIUB). Building practical software projects, exploring emerging technologies, and solving real-world problems through programming and research.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">
+            <i data-lucide="layers"></i> Explore Projects
+          </a>
+          <a href="#research" class="btn-secondary">
+            <i data-lucide="book-open"></i> Research Focus
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <i data-lucide="mail"></i> Get In Touch
+          </a>
+        </div>
+
+        <!-- Quick Academic & Coding Stats Ribbon -->
+        <div class="hero-stats-ribbon" id="hero-stats-ribbon">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+
+      <!-- Right 3D Visual Floating Hint Badge -->
+      <div class="hero-3d-wrapper">
+        <div class="cyber-hint-badge">
+          <i data-lucide="sparkles" style="width:14px;height:14px;color:var(--accent-cyan)"></i>
+          <span>Click &amp; Drag to rotate 3D Cyber Core</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me & Interactive Recruiter Terminal -->
+  <section class="section-padding" id="about" style="background: rgba(13, 18, 29, 0.4)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 01. Background &amp; Profile</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-desc">CSE undergraduate, practical software developer, and explainable AI research enthusiast.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Developer Profile Card -->
+        <div class="about-card tilt-card" data-tilt>
+          <div class="about-avatar-row">
+            <div class="avatar-frame">
+              <img src="assets/images/demo-avatar.svg" alt="Faysal Mahmud Avatar" id="about-avatar-img">
+            </div>
+            <div>
+              <h3 style="font-size:1.4rem; font-weight:700; color:#fff" id="about-name">Faysal Mahmud</h3>
+              <div style="font-size:0.88rem; color:var(--accent-cyan); font-family:var(--font-mono)" id="about-dept">
+                Computer Science and Engineering • AIUB
+              </div>
+            </div>
+          </div>
+
+          <p class="about-p" id="about-bio-p1">
+            I am a Computer Science and Engineering student at American International University-Bangladesh with a strong interest in software engineering, web development, artificial intelligence, and research.
+          </p>
+
+          <p class="about-p" id="about-bio-p2">
+            I enjoy building practical software projects, exploring emerging technologies, and solving real-world problems through programming and research. My goal is to grow as a software engineer while contributing to innovative projects and meaningful research.
+          </p>
+
+          <div class="contact-meta-list" id="about-meta-list">
+            <!-- Dynamically populated from data.js -->
+          </div>
+
+          <!-- Career Interests Badges -->
+          <div class="career-interests-section">
+            <div class="career-interests-label">// Primary Career &amp; Research Interests:</div>
+            <div class="career-interest-tags" id="career-interests-tags">
+              <!-- Dynamically populated from data.js -->
+            </div>
+          </div>
+
+          <button class="admin-edit-pill" onclick="openAdminModal('profile')" style="margin-top:1.5rem">
+            <i data-lucide="edit-3"></i> Edit Profile Info
+          </button>
+        </div>
+
+        <!-- Right: Interactive Recruiter Terminal -->
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <div class="terminal-title">bash • faysal-portfolio-terminal (v2.5)</div>
+            <i data-lucide="terminal" style="width:16px;height:16px;color:var(--text-dim)"></i>
+          </div>
+
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-line" style="color:var(--accent-cyan)">
+              Connected to student session. Welcome to Faysal Mahmud's portfolio terminal!
+            </div>
+            <div class="terminal-line" style="color:var(--text-muted)">
+              Type <span style="color:#fff;font-weight:600">help</span> to view all commands, or click any quick command below:
+            </div>
+          </div>
+
+          <!-- Quick Command Chips for Recruiters -->
+          <div style="padding: 0 1.25rem 0.5rem">
+            <div class="terminal-chips">
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('whoami')">whoami</button>
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('skills')">skills</button>
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('education')">education</button>
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('projects')">projects</button>
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('research')">research</button>
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('leadership')">leadership</button>
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('sudo hire')">sudo hire 🚀</button>
+              <button class="terminal-chip-btn" onclick="runTerminalCommand('clear')">clear</button>
+            </div>
+          </div>
+
+          <div class="terminal-header" style="border-top: 1px solid rgba(255, 255, 255, 0.05); background:#0c101a">
+            <div class="terminal-input-row" style="width:100%">
+              <span class="terminal-prompt">recruiter@faysal-term:~$</span>
+              <input type="text" class="terminal-input" id="terminal-input" placeholder="type 'help' or command..." autocomplete="off">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Academic Journey -->
+  <section class="section-padding" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 02. Academic Track Record</span>
+        <h2 class="section-title">Education &amp; University</h2>
+        <p class="section-desc">Undergraduate program in Computer Science and Engineering at AIUB.</p>
+      </div>
+
+      <div class="education-timeline" id="education-list">
+        <!-- Dynamically rendered from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Matrix -->
+  <section class="section-padding" id="skills" style="background: rgba(13, 18, 29, 0.4)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 03. Core Competencies</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-desc">Languages, development tools, databases, research domains, and professional soft skills.</p>
+      </div>
+
+      <div class="skills-grid" id="skills-matrix">
+        <!-- Dynamically rendered from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Showcase -->
+  <section class="section-padding" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 04. Engineering Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-desc">Completed software applications, collaborative FinTech prototypes, and embedded hardware concepts.</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web-software">Software &amp; Web</button>
+        <button class="filter-btn" data-filter="ai-research">AI / ML &amp; Research</button>
+        <button class="filter-btn" data-filter="iot-embedded">Embedded &amp; IoT</button>
+      </div>
+
+      <!-- Dynamic Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Dynamically populated from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated Research & Publications Section -->
+  <section class="section-padding" id="research" style="background: rgba(13, 18, 29, 0.5)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 05. Research &amp; Publications</span>
+        <h2 class="section-title">Research &amp; Publications</h2>
+        <p class="section-desc">Empirical investigations in explainable AI, machine learning health risk prediction, and EV cybersecurity.</p>
+      </div>
+
+      <!-- Research Focus Areas Grid -->
+      <div style="margin-bottom: 2rem">
+        <h3 style="font-size:1.35rem; font-weight:700; color:#fff; margin-bottom:1.2rem; display:flex; align-items:center; gap:0.5rem">
+          <i data-lucide="compass" style="color:var(--accent-cyan)"></i>
+          <span>Core Research Areas &amp; Methodologies</span>
+        </h3>
+        <div class="research-areas-grid" id="research-areas-grid">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+
+      <!-- Publications List -->
+      <div style="margin-top: 3.5rem">
+        <h3 style="font-size:1.35rem; font-weight:700; color:#fff; margin-bottom:1.2rem; display:flex; align-items:center; gap:0.5rem">
+          <i data-lucide="book-open" style="color:var(--accent-purple)"></i>
+          <span>Peer-Reviewed Publications (Reported)</span>
+        </h3>
+        <div class="publications-container" id="publications-list">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience, Leadership & Achievements -->
+  <section class="section-padding" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 06. Leadership &amp; Service</span>
+        <h2 class="section-title">Leadership &amp; Activities</h2>
+        <p class="section-desc">Academic organizing with AIUB R&amp;D Club and community service leadership in Scouting.</p>
+      </div>
+
+      <div class="exp-timeline" id="experience-list">
+        <!-- Dynamically rendered from data.js -->
+      </div>
+
+      <!-- Achievements & Competitions Sub-Grid -->
+      <div style="margin-top: 5rem">
+        <div style="text-align: center; margin-bottom: 2rem">
+          <span class="section-tag">// Honors &amp; Presentations</span>
+          <h3 style="font-size: 1.6rem; font-weight: 700; color: #fff">Achievements &amp; Competitions</h3>
+          <p class="section-desc" style="font-size:0.95rem">Academic presentation awards, poster competitions, and hackathons.</p>
+        </div>
+        <div class="certs-grid" id="certifications-grid">
+          <!-- Dynamically rendered from data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-padding" id="contact" style="background: rgba(13, 18, 29, 0.4)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 07. Initiate Connection</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-desc">Open for software engineering internships, collaborative research, and technical inquiries.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Direct Contact Information -->
+        <div class="contact-info-card">
+          <h3 style="font-size:1.4rem; font-weight:700; color:#fff; margin-bottom:0.75rem">Let's Connect</h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.7">
+            I am actively seeking software engineering internships and research opportunities. Please feel free to reach out directly via email or send a message using the form.
+          </p>
+
+          <div class="contact-method-list">
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <div class="contact-label">Official University Email</div>
+                <a href="mailto:23-54032-3@student.aiub.edu" class="contact-value">23-54032-3@student.aiub.edu</a>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Mirpur-02, Dhaka, Bangladesh</div>
+              </div>
+            </div>
+
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <i data-lucide="graduation-cap"></i>
+              </div>
+              <div>
+                <div class="contact-label">University &amp; Department</div>
+                <div class="contact-value">AIUB • Department of CSE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Direct Message Form -->
+        <form class="contact-form" id="contact-form">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.2rem">
+            <div class="form-group">
+              <label for="form-name">Your Name</label>
+              <input type="text" id="form-name" class="form-control" placeholder="e.g. Technical Recruiter / Researcher" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Your Work Email</label>
+              <input type="email" id="form-email" class="form-control" placeholder="colleague@organization.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-subject">Subject</label>
+            <input type="text" id="form-subject" class="form-control" placeholder="Software Engineering Internship / Research Inquiry" required>
+          </div>
+
+          <div class="form-group">
+            <label for="form-message">Message</label>
+            <textarea id="form-message" class="form-control" placeholder="Hello Faysal, I would like to discuss an internship / project opportunity..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="align-self: flex-start">
+            <i data-lucide="send"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-copy">
+        Designed &amp; Built by <strong style="color:#fff" id="footer-copy-name">Faysal Mahmud</strong> • AIUB CSE Undergraduate
+      </div>
+
+      <div class="footer-socials" id="footer-socials">
+        <!-- Dynamically rendered -->
+      </div>
+
+      <!-- Secret Admin Trigger Link in footer -->
+      <button onclick="toggleAdminAccess()" style="background:none; border:none; color:var(--text-dim); font-size:0.75rem; font-family:var(--font-mono); cursor:pointer; display:flex; align-items:center; gap:0.4rem">
+        <i data-lucide="shield-check" style="width:13px;height:13px"></i> Owner Portal
+      </button>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       OWNER / ADMIN CMS FLOATING HUD & MODALS
+       ========================================================================== -->
+
+  <!-- Floating HUD Bar (Visible when Admin Mode Active) -->
+  <div class="admin-hud-bar" id="admin-hud-bar">
+    <div class="admin-hud-badge">
+      <i data-lucide="shield" style="width:16px;height:16px"></i>
+      <span>ADMIN MODE ACTIVE</span>
+    </div>
+    <button class="hud-btn" onclick="openAdminModal('profile')">
+      <i data-lucide="user"></i> Edit Profile
+    </button>
+    <button class="hud-btn" onclick="openAdminModal('education')">
+      <i data-lucide="graduation-cap"></i> Edit Education
+    </button>
+    <button class="hud-btn" onclick="openAdminModal('projects')">
+      <i data-lucide="folder-plus"></i> Edit Projects
+    </button>
+    <button class="hud-btn" onclick="openAdminModal('export')" style="background:linear-gradient(135deg,var(--accent-cyan),var(--accent-blue)); color:#000; font-weight:700">
+      <i data-lucide="download"></i> Export for GitHub
+    </button>
+    <button class="hud-btn danger" onclick="exitAdminMode()">
+      <i data-lucide="log-out"></i> Lock / Exit
+    </button>
+  </div>
+
+  <!-- Admin Passcode Authentication Modal -->
+  <div class="modal-overlay" id="admin-auth-modal">
+    <div class="modal-dialog" style="max-width: 440px">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i data-lucide="lock" style="color:var(--accent-cyan)"></i>
+          <span>Owner Authentication</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeAuthModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.2rem">
+          This portal allows you to edit personal details, add projects, link GitHub repos, and export changes to your repository.
+        </p>
+        <div class="form-group" style="margin-bottom:1rem">
+          <label for="admin-passcode-input">Master Passcode</label>
+          <input type="password" id="admin-passcode-input" class="form-control" placeholder="Default: cse2026" onkeydown="if(event.key==='Enter') verifyAdminPasscode()">
+        </div>
+        <div id="admin-auth-error" style="color:#ef4444; font-size:0.82rem; margin-bottom:1rem; display:none">
+          Incorrect passcode.
+        </div>
+        <div style="font-size:0.75rem; color:var(--text-dim); margin-bottom:1.2rem">
+          💡 Master passcode is <code>cse2026</code>. You can change this in the Admin Settings tab anytime.
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:0.8rem">
+          <button class="btn-secondary" onclick="closeAuthModal()" style="padding:0.5rem 1rem; font-size:0.88rem">Cancel</button>
+          <button class="btn-primary" onclick="verifyAdminPasscode()" style="padding:0.5rem 1.4rem; font-size:0.88rem">Unlock CMS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin CMS Comprehensive Edit Modal -->
+  <div class="modal-overlay" id="admin-cms-modal">
+    <div class="modal-dialog large">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i data-lucide="sliders" style="color:var(--accent-cyan)"></i>
+          <span>Portfolio Control Center (CMS)</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeAdminModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="profile" onclick="switchAdminTab('profile')">👤 Profile &amp; Picture</button>
+        <button class="modal-tab-btn" data-tab="education" onclick="switchAdminTab('education')">🎓 College &amp; University</button>
+        <button class="modal-tab-btn" data-tab="projects" onclick="switchAdminTab('projects')">🚀 Projects Showcase</button>
+        <button class="modal-tab-btn" data-tab="export" onclick="switchAdminTab('export')">📦 GitHub Sync &amp; Export</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Tab 1: Profile & Picture -->
+        <div class="tab-pane active" id="tab-profile">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.2rem; margin-bottom:1.2rem">
+            <div class="form-group">
+              <label for="admin-name">Full Name</label>
+              <input type="text" id="admin-name" class="form-control" placeholder="Faysal Mahmud">
+            </div>
+            <div class="form-group">
+              <label for="admin-role">Professional Title</label>
+              <input type="text" id="admin-role" class="form-control" placeholder="Aspiring Software Engineer | Web Developer">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:1.2rem">
+            <label for="admin-status">Hero Status Badge</label>
+            <input type="text" id="admin-status" class="form-control" placeholder="🟢 Open for Software Engineering Internships">
+          </div>
+
+          <div class="form-group" style="margin-bottom:1.2rem">
+            <label for="admin-tagline">Headline / Tagline</label>
+            <input type="text" id="admin-tagline" class="form-control">
+          </div>
+
+          <!-- Avatar Image (URL or Local File Upload) -->
+          <div style="background:#0a0e1a; border:1px solid var(--border-subtle); padding:1.2rem; border-radius:10px; margin-bottom:1.2rem">
+            <label style="font-weight:700; color:#fff; font-size:0.9rem; display:block; margin-bottom:0.6rem">Profile Picture</label>
+            <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap">
+              <img id="admin-avatar-preview" src="assets/images/demo-avatar.svg" style="width:70px; height:70px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-cyan)">
+              <div style="flex:1">
+                <input type="text" id="admin-avatar-url" class="form-control" placeholder="Image URL (or select local file below)" style="margin-bottom:0.5rem">
+                <input type="file" id="admin-avatar-file" accept="image/*" style="font-size:0.8rem; color:var(--text-muted)">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:1.2rem">
+            <label for="admin-bio-p1">Bio Paragraph 1</label>
+            <textarea id="admin-bio-p1" class="form-control" style="min-height:70px"></textarea>
+          </div>
+
+          <div class="form-group" style="margin-bottom:1.2rem">
+            <label for="admin-bio-p2">Bio Paragraph 2</label>
+            <textarea id="admin-bio-p2" class="form-control" style="min-height:70px"></textarea>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.2rem; margin-bottom:1.2rem">
+            <div class="form-group">
+              <label for="admin-email">Email Address</label>
+              <input type="email" id="admin-email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="admin-location">Location</label>
+              <input type="text" id="admin-location" class="form-control">
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.2rem; margin-bottom:1.2rem">
+            <div class="form-group">
+              <label for="admin-github">GitHub Profile URL (Optional)</label>
+              <input type="url" id="admin-github" class="form-control" placeholder="https://github.com/your-username">
+            </div>
+            <div class="form-group">
+              <label for="admin-linkedin">LinkedIn Profile URL (Optional)</label>
+              <input type="url" id="admin-linkedin" class="form-control" placeholder="https://linkedin.com/in/your-username">
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; gap:0.8rem; margin-top:1.5rem">
+            <button class="btn-primary" onclick="saveAdminProfile()">
+              <i data-lucide="check"></i> Save Profile Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 2: College & University (Education) -->
+        <div class="tab-pane" id="tab-education">
+          <div style="margin-bottom:1.5rem">
+            <h4 style="color:#fff; font-size:1.05rem; margin-bottom:0.75rem">Current Academic Details</h4>
+            <div id="admin-education-items"></div>
+          </div>
+
+          <div style="background:#0a0e1a; border:1px solid var(--border-subtle); padding:1.5rem; border-radius:12px">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem">
+              <h4 id="admin-edu-form-title" style="color:#fff; font-size:1rem; font-weight:700">Add / Edit Academic Entry</h4>
+              <button class="hud-btn" onclick="resetEducationForm()">+ New Blank</button>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:1rem; margin-bottom:1rem">
+              <div class="form-group">
+                <label for="admin-edu-institution">Institution / University Name</label>
+                <input type="text" id="admin-edu-institution" class="form-control" placeholder="American International University-Bangladesh (AIUB)">
+              </div>
+              <div class="form-group">
+                <label for="admin-edu-degree">Degree Program</label>
+                <input type="text" id="admin-edu-degree" class="form-control" placeholder="B.Sc. in Computer Science and Engineering">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:1rem; margin-bottom:1rem">
+              <div class="form-group">
+                <label for="admin-edu-duration">Duration / Period</label>
+                <input type="text" id="admin-edu-duration" class="form-control" placeholder="Undergraduate Program">
+              </div>
+              <div class="form-group">
+                <label for="admin-edu-score">Status / Score</label>
+                <input type="text" id="admin-edu-score" class="form-control" placeholder="B.Sc. in CSE (In Progress)">
+              </div>
+              <div class="form-group">
+                <label for="admin-edu-badge">Badge Label</label>
+                <input type="text" id="admin-edu-badge" class="form-control" placeholder="AIUB CSE">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem">
+              <label for="admin-edu-desc">Description</label>
+              <textarea id="admin-edu-desc" class="form-control" style="min-height:60px" placeholder="Department overview, academic focus..."></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem">
+              <label for="admin-edu-coursework">Coursework (Comma separated)</label>
+              <input type="text" id="admin-edu-coursework" class="form-control" placeholder="Data Structures, OOP, DBMS, Machine Learning, Web Technologies">
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem">
+              <label for="admin-edu-achievements">Key Achievements / Honors (Comma separated)</label>
+              <input type="text" id="admin-edu-achievements" class="form-control" placeholder="AIUB R&D Club Organizer, Poster Competition Winner">
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; gap:0.8rem">
+              <button class="btn-primary" onclick="saveAdminEducation()">
+                <i data-lucide="check"></i> Save Academic Entry
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Projects -->
+        <div class="tab-pane" id="tab-projects">
+          <div style="margin-bottom:1.5rem">
+            <h4 style="color:#fff; font-size:1.05rem; margin-bottom:0.75rem">Current Projects</h4>
+            <div id="admin-projects-items"></div>
+          </div>
+
+          <div style="background:#0a0e1a; border:1px solid var(--border-subtle); padding:1.5rem; border-radius:12px">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem">
+              <h4 id="admin-proj-form-title" style="color:#fff; font-size:1rem; font-weight:700">Add / Edit Project</h4>
+              <button class="hud-btn" onclick="resetProjectForm()">+ New Blank</button>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:1rem; margin-bottom:1rem">
+              <div class="form-group">
+                <label for="admin-proj-title">Project Title</label>
+                <input type="text" id="admin-proj-title" class="form-control" placeholder="e.g. NextTrip — Travel Management System">
+              </div>
+              <div class="form-group">
+                <label for="admin-proj-category">Category</label>
+                <select id="admin-proj-category" class="form-control">
+                  <option value="web-software">Software &amp; Web</option>
+                  <option value="ai-research">AI / ML &amp; Research</option>
+                  <option value="iot-embedded">Embedded &amp; IoT</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:1rem; margin-bottom:1rem">
+              <div class="form-group">
+                <label for="admin-proj-subtitle">Subtitle</label>
+                <input type="text" id="admin-proj-subtitle" class="form-control" placeholder="Concise project role or technical context">
+              </div>
+              <div class="form-group">
+                <label for="admin-proj-status">Project Status</label>
+                <input type="text" id="admin-proj-status" class="form-control" placeholder="Completed / In Progress / Concept">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem">
+              <label for="admin-proj-summary">Short Summary (Displayed on Card)</label>
+              <textarea id="admin-proj-summary" class="form-control" style="min-height:60px"></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem">
+              <label for="admin-proj-desc">Detailed Description (Displayed in Details Modal)</label>
+              <textarea id="admin-proj-desc" class="form-control" style="min-height:90px"></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem">
+              <label for="admin-proj-metrics">Metrics / Scope Callout</label>
+              <input type="text" id="admin-proj-metrics" class="form-control" placeholder="e.g. Completed Software Engineering Project">
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem">
+              <label for="admin-proj-tags">Tech Stack Tags (Comma separated)</label>
+              <input type="text" id="admin-proj-tags" class="form-control" placeholder="C++, Java, C#, SQL, Web Development">
+            </div>
+
+            <!-- Project Image (URL or file) -->
+            <div style="background:#111827; padding:1rem; border-radius:8px; margin-bottom:1rem">
+              <label style="font-weight:700; color:#fff; font-size:0.85rem; display:block; margin-bottom:0.5rem">Project Preview Image</label>
+              <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap">
+                <img id="admin-proj-preview" src="assets/images/project-nexttrip.svg" style="width:100px; height:60px; object-fit:cover; border-radius:6px; border:1px solid var(--border-subtle)">
+                <div style="flex:1">
+                  <input type="text" id="admin-proj-image" class="form-control" placeholder="Image URL (e.g. assets/images/project-nexttrip.svg)" style="margin-bottom:0.4rem">
+                  <input type="file" id="admin-proj-file" accept="image/*" style="font-size:0.8rem; color:var(--text-muted)">
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-bottom:1rem">
+              <div class="form-group">
+                <label for="admin-proj-github">GitHub Repository Link (Add when available)</label>
+                <input type="url" id="admin-proj-github" class="form-control" placeholder="https://github.com/...">
+              </div>
+              <div class="form-group">
+                <label for="admin-proj-demo">Live Demo Link (Add when available)</label>
+                <input type="url" id="admin-proj-demo" class="form-control" placeholder="https://demo.example.com">
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; gap:0.8rem">
+              <button class="btn-primary" onclick="saveAdminProject()">
+                <i data-lucide="check"></i> Save Project
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: GitHub Sync & Export (Crucial for GitHub Pages!) -->
+        <div class="tab-pane" id="tab-export">
+          <div style="background:rgba(56, 189, 248, 0.08); border:1px solid rgba(56, 189, 248, 0.3); border-radius:10px; padding:1.2rem; margin-bottom:1.5rem">
+            <h4 style="color:var(--accent-cyan); font-weight:700; font-size:1.05rem; margin-bottom:0.5rem">
+              Publishing Updates to GitHub Pages
+            </h4>
+            <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6">
+              Edits made here save automatically in your browser's local cache. Whenever you add your real GitHub repository links or publication details and want them live on GitHub Pages worldwide:
+            </p>
+            <ol style="font-size:0.88rem; color:var(--text-main); margin-top:0.6rem; padding-left:1.4rem; line-height:1.7">
+              <li>Click <strong>"Download Updated data.js"</strong> below.</li>
+              <li>Place the downloaded <code>data.js</code> inside your <code>portfolio-3d/js/</code> directory.</li>
+              <li>Commit &amp; push: <code>git add js/data.js &amp;&amp; git commit -m "Update portfolio links" &amp;&amp; git push</code>.</li>
+            </ol>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:0.8rem; margin-bottom:1.5rem">
+            <button class="btn-primary" onclick="downloadDataJsFile()">
+              <i data-lucide="download"></i> Download Updated data.js
+            </button>
+            <button class="btn-secondary" onclick="copyDataJsCode()">
+              <i data-lucide="copy"></i> Copy data.js Code
+            </button>
+            <button class="btn-secondary" onclick="exportJsonBackup()">
+              <i data-lucide="file-json"></i> Export JSON Backup
+            </button>
+            <label class="btn-secondary" style="margin:0; cursor:pointer">
+              <i data-lucide="upload"></i> Import JSON Backup
+              <input type="file" accept=".json" onchange="importJsonBackup(event)" style="display:none">
+            </label>
+          </div>
+
+          <div style="margin-bottom:1.5rem">
+            <label style="font-size:0.85rem; font-weight:600; color:var(--text-muted); display:block; margin-bottom:0.5rem">Generated data.js Code Preview:</label>
+            <div class="code-export-box" id="export-code-preview"></div>
+          </div>
+
+          <!-- Danger / Settings Area -->
+          <div style="border-top:1px solid var(--border-subtle); padding-top:1.2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem">
+            <button class="hud-btn" onclick="changeAdminPasscode()">
+              <i data-lucide="key"></i> Change Admin Passcode
+            </button>
+            <button class="hud-btn danger" onclick="resetToDemoData()">
+              <i data-lucide="rotate-ccw"></i> Reset to Factory Data
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Deep-Dive Modal -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title" id="project-modal-title">Project Details</div>
+        <button class="modal-close-btn" onclick="closeProjectModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="project-modal-body">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Resume Preview Modal -->
+  <div class="modal-overlay" id="resume-modal">
+    <div class="modal-dialog" style="max-width: 720px">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i data-lucide="file-text" style="color:var(--accent-cyan)"></i>
+          <span>Resume &amp; Academic Credentials</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeResumeModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body" style="font-size:0.92rem; color:var(--text-muted); line-height:1.7">
+        <div style="background:#111827; padding:1.5rem; border-radius:10px; margin-bottom:1.5rem; border:1px solid var(--border-subtle)">
+          <h3 style="color:#fff; font-size:1.3rem; margin-bottom:0.3rem">Faysal Mahmud</h3>
+          <div style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.85rem; margin-bottom:0.8rem">
+            American International University-Bangladesh (AIUB) • Department of CSE
+          </div>
+          <p>
+            Aspiring Software Engineer, Web Developer, and AI/ML Research Enthusiast. Open for Software Engineering internships, technical projects, and research collaborations.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap">
+          <a href="mailto:23-54032-3@student.aiub.edu?subject=Resume%20Inquiry%20-%20Faysal%20Mahmud" class="btn-primary" style="font-size:0.88rem">
+            <i data-lucide="mail"></i> Email Faysal Mahmud
+          </a>
+          <button class="btn-secondary" onclick="closeResumeModal()" style="font-size:0.88rem">
+            Close Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Bundles (Vendored local with high-speed CDN fallbacks) -->
+  <script src="js/vendor/three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+
+  <script src="js/vendor/lucide.min.js"></script>
+  <script>
+    if (typeof lucide === 'undefined') {
+      document.write('<script src="https://unpkg.com/lucide@latest"><\/script>');
+    }
+  </script>
+
+  <!-- Application Logic -->
+  <script src="js/data.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
