@@ -484,7 +484,7 @@ const DEFAULT_PORTFOLIO_DATA = {
 
   // Security & Admin Configuration
   admin: {
-    passcode: "cse2026",
+    passcode: "Cse2026",
     lastUpdated: "2026-10-22"
   }
 };
